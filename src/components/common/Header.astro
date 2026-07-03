@@ -1,0 +1,35 @@
+---
+import Container from "./Container.astro";
+import { NAVIGATION } from "../../constants/navigation";
+import "../../styles/header.css";
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <Container>
+    <nav class="header__nav">
+      <a href="/" class="header__logo">
+        STG Vietnam
+      </a>
+
+      <ul class="header__menu">
+  {
+    NAVIGATION.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          class={currentPath === item.href ? "active" : ""}
+        >
+          {item.label}
+        </a>
+      </li>
+      ))
+     }
+      </ul>
+
+      <button class="header__language">
+      🌐 VI
+      </button>
+    </nav>
+  </Container>
+</header>
