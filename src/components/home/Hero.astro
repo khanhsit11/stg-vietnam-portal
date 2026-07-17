@@ -1,3 +1,43 @@
-<section>
-  <h1>Hero Banner</h1>
+---
+import { HERO_SLIDES } from "../../constants/hero";
+import "../../styles/hero.css";
+---
+
+<section class="hero">
+
+  <div class="hero__viewport">
+    <div class="hero__container">
+
+      {
+        HERO_SLIDES.map((slide) => (
+          <div class="hero__slide">
+            <img
+              class="hero__image"
+              src={slide.image}
+              alt="STG Vietnam"
+            />
+          </div>
+        ))
+      }
+
+    </div>
+  </div>
+
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <h1>Strategic Sports Vietnam</h1>
+
+    <p>
+      Together We Build Better Products
+    </p>
+
+    <a class="hero__button" href="/about">
+      Learn More
+    </a>
+  </div>
+
 </section>
+
+<script type="module" src="../../scripts/hero.ts"></script>
+
